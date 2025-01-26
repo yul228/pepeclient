@@ -6,13 +6,11 @@ import { addPost, addComment, setPosts } from '@/store/postsSlice';
 export {
 	toggleMenu,
 	setSearch,
-
 	setPage,
-	
 	toggleFilters,
 	setVisible,
-	
-	addPost,       
-    addComment,    
-    setPosts,
-};
+	addPost,
+	addComment,
+	setPosts,
+  };
+  

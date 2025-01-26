@@ -1,0 +1,52 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #282828;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+  
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+  
+%input-base {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 1rem;
+    
+    &:focus {
+        outline: none;
+        border-color: #666;
+    }
+}
+  
+.input {
+    @extend %input-base;
+}
+  
+.textarea {
+    @extend %input-base;
+    resize: vertical;
+    min-height: 100px;
+}
+  
+
+  
+.error {
+    color: #ff4444;
+    background-color: rgba(255, 68, 68, 0.1);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}

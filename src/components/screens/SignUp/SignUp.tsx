@@ -1,4 +1,4 @@
-import { AuthService } from '@/services/auth.service'; // Добавьте этот импорт
+import { AuthService } from '@/services/auth.service'; 
 import { RoutesEnum } from '@/constants/routes';
 import { Auth } from '@/components/Auth/Auth';
 import { Controller, useForm } from 'react-hook-form';
@@ -35,8 +35,7 @@ export const SignUp = () => {
     resolver: yupResolver(schema),
   });
 
-  // Обработчик регистрации с отправкой данных на сервер
-// В обработчике регистрации добавлена более детальная обработка ошибок
+ 
 const handleRegister = handleSubmit(async (data) => {
 	try {
 	  const response = await AuthService.register(data);
@@ -99,7 +98,7 @@ const handleRegister = handleSubmit(async (data) => {
       <Button type="submit">Зарегистрироваться</Button>
       <Link>
         Есть аккаунт?&nbsp;
-        <NextLink href={RoutesEnum.Login}>
+        <NextLink href={RoutesEnum.Login} className="link">
           Войти
         </NextLink>
       </Link>

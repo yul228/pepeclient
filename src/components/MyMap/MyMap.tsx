@@ -10,7 +10,7 @@ interface PlacemarkType {
   caption: string;
 }
 
-function MyMap(): JSX.Element {
+function MyMap(): TSX.Element {
   const [placemarks, setPlacemarks] = useState<PlacemarkType[]>([]);
   const mapService = new MapService();
 
