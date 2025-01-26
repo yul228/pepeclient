@@ -1,0 +1,66 @@
+.container {
+	display: flex; 
+	padding: 20px;
+}
+
+.productsContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 15px;
+	overflow-y: auto;
+	max-height: 600px;
+	flex: 1; 
+}
+
+.cartContainer {
+	width: 300px; 
+	margin-left: 20px; 
+	padding: 10px;
+	background-color: #f9f9f9; 
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+}
+
+.productCard {
+	background-color: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	text-align: center;
+	transition: transform 0.3s, box-shadow 0.3s;
+
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+	}
+}
+
+.productImageContainer {
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden; // Скрываем переполненные области
+	border-radius: 8px; // Скругление углов
+	background-color: #eeeeee; // Фоновый цвет для контейнера
+}
+
+.productImage {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover; // Заполнение контейнера с сохранением пропорций
+}
+
+.productDetails {
+	padding: 10px;
+}
+
+.productName {
+	font-size: 1.2em;
+	margin: 10px 0;
+}
+
+.productPrice {
+	font-size: 1.1em;
+	color: #e91e63;
+}

@@ -1,0 +1,59 @@
+.paymentPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .paymentForm {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+
+        .inputGroup {
+            margin-bottom: 20px;
+
+            label {
+                margin-bottom: 5px;
+                font-size: 14px;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+        }
+
+        .checkboxGroup {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+
+            input {
+                margin-right: 10px;
+            }
+        }
+
+        
+        
+    }
+
+    
+
+    
+}
