@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import { MapService } from '@/services/MyMap';
 import styles from './MyMap.module.scss';
@@ -10,22 +10,22 @@ interface PlacemarkType {
   caption: string;
 }
 
-function MyMap(): TSX.Element {
+function MyMap(): React.ReactElement {
   const [placemarks, setPlacemarks] = useState<PlacemarkType[]>([]);
   const mapService = new MapService();
 
-  useEffect(() => {
-    loadPlacemarks();
-  }, []);
-
-  const loadPlacemarks = async () => {
+  const loadPlacemarks = useCallback(async () => {
     try {
       const marks = await mapService.getAllPlacemarks();
       setPlacemarks(marks);
     } catch (error) {
       console.error('Error loading placemarks:', error);
     }
-  };
+  }, [mapService]);
+
+  useEffect(() => {
+    loadPlacemarks();
+  }, [loadPlacemarks]);
 
   const handleMapClick = async (event: any) => {
     const [latitude, longitude] = event.get('coords');
@@ -45,26 +45,30 @@ function MyMap(): TSX.Element {
     }
   };
 
-  return (
-    <div className={styles.mapContainer}>
-      <YMaps>
-        <Map
-          className={styles.map}
-          defaultState={{ center: [43.1156, 131.8727], zoom: 13 }}
-          onClick={handleMapClick}
-        >
-          {placemarks.map((placemark) => (
-            <Placemark
-              key={placemark.id}
-              geometry={[placemark.latitude, placemark.longitude]}
-              properties={{
-                iconContent: placemark.caption,
-              }}
-            />
-          ))}
-        </Map>
-      </YMaps>
-    </div>
+  return React.createElement(
+    'div',
+    { className: styles.mapContainer },
+    React.createElement(
+      YMaps,
+      null,
+      React.createElement(
+        Map,
+        {
+          className: styles.map,
+          defaultState: { center: [43.1156, 131.8727], zoom: 13 },
+          onClick: handleMapClick,
+        },
+        placemarks.map((placemark) =>
+          React.createElement(Placemark, {
+            key: placemark.id,
+            geometry: [placemark.latitude, placemark.longitude],
+            properties: {
+              iconContent: placemark.caption,
+            },
+          })
+        )
+      )
+    )
   );
 }
 

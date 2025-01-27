@@ -23,7 +23,7 @@ export class MapService {
     return response.data;
   }
 
-  async deletePlacemark(id: number): Promise<void> {
-    await axios.delete(`${this.API_URL}/${id}`);
-  }
+  async  deletePlacemark(id: number): Promise<void> {
+    await axios.delete(this.API_URL + '/' + id);
+}
 }

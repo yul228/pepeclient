@@ -10,7 +10,7 @@ import { useActions } from '@/hooks/useActions';
    import Link from 'next/link';
 
    export const Header = () => {
-       const ref = useRef<HTMLDivElement | null>(null); // Обратите внимание на null
+       const ref = useRef<HTMLDivElement | null>(null); 
        const { toggleMenu } = useActions();
 
        useOnClickOutside(ref as React.RefObject<HTMLDivElement>, () => toggleMenu(false));

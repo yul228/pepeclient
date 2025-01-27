@@ -1,4 +1,4 @@
-import { Chat } from './components/Chat/Chat';
+
 import  PetProductList  from './components/PetProductList/PetProductList'; 
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -6,7 +6,7 @@ import Head from 'next/head';
 import styles from './Room.module.scss';
 
 const Room: React.FC = () => {
-	const { query: { id } } = useRouter();
+	const {  } = useRouter();
 
 	useEffect(() => {
 		const script = document.createElement('script');

@@ -6,7 +6,7 @@ require('dotenv').config();
 const nextConfig = {
     images: {
         domains: ['st.kp.yandex.net', 'avatars.mds.yandex.net', 'www.themoviedb.org'],
-        unoptimized: true, // Переместили unoptimized сюда
+        unoptimized: true,
     },
     env: {
         API_KEY: process.env.API_KEY,
